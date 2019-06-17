@@ -1,5 +1,6 @@
 package com.nevercome.icuriosity.common.result;
 
+import com.nevercome.icuriosity.utils.RequestContextHolderUtil;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -90,7 +91,7 @@ public class DefaultErrorResult {
         result.setStatus(httpStatus.value());
         result.setError(httpStatus.getReasonPhrase());
         result.setException(e.getClass().getName());
-//        result.setPath(RequestContextHolderUtil.getRequest().getRequestURI());
+        result.setPath(RequestContextHolderUtil.getRequest().getRequestURI());
         result.setTimestamp(new Date());
         return result;
     }
