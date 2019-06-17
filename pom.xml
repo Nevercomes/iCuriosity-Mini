@@ -78,11 +78,27 @@
         <!-- test end -->
 
         <!-- platform api begin -->
-        <!--<dependency>-->
-            <!--<groupId>com.baidu.aip</groupId>-->
-            <!--<artifactId>java-sdk</artifactId>-->
-            <!--<version>4.4.1</version>-->
-        <!--</dependency>-->
+        <dependency>
+            <groupId>com.baidu.aip</groupId>
+            <artifactId>aip-java-sdk</artifactId>
+            <version>4.11.3</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/lib/aip-java-sdk-4.11.3/aip-java-sdk-4.11.3.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>com.baidu.aip</groupId>
+            <artifactId>aip-java-sdk-json</artifactId>
+            <version>4.11.3</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/lib/aip-java-sdk-4.11.3/json-20160810.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>com.baidu.aip</groupId>
+            <artifactId>aip-java-sdk-slf4j</artifactId>
+            <version>4.11.3</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/lib/aip-java-sdk-4.11.3/slf4j-api-1.7.25.jar</systemPath>
+        </dependency>
         <!-- platform api end-->
 
         <!-- utils begin -->
@@ -127,6 +143,23 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
         </plugins>
+
+        <!-- 解决第三方jar的打包问题 -->
+        <!--<resources>-->
+            <!--<resource>-->
+                <!--<directory>${project.basedir}/lib</directory>-->
+                <!--<targetPath>BOOT-INF/lib/</targetPath>-->
+                <!--<includes>-->
+                    <!--<include>**/*.jar</include>-->
+                <!--</includes>-->
+            <!--</resource>-->
+            <!--<resource>-->
+                <!--<directory>src/main/resources</directory>-->
+                <!--<targetPath>BOOT-INF/classes/</targetPath>-->
+            <!--</resource>-->
+        <!--</resources>-->
+
+
     </build>
 
 </project>
