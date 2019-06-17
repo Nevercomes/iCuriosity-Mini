@@ -1,5 +1,7 @@
 package com.nevercome.icuriosity.common.result;
 
+import com.nevercome.icuriosity.common.exception.BusinessException;
+import com.nevercome.icuriosity.common.exception.ExceptionEnum;
 import com.nevercome.icuriosity.utils.RequestContextHolderUtil;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -101,18 +103,18 @@ public class DefaultErrorResult {
      * @param e
      * @return
      */
-//    public static DefaultErrorResult failure(BusinessException e) {
-//        ExceptionEnum ee = ExceptionEnum.getByEClass(e.getClass());
-//        if (ee != null) {
-//            return DefaultErrorResult.failure(ee.getResultCode(), e, ee.getHttpStatus(), e.getData());
-//        }
-//
-//        DefaultErrorResult defaultErrorResult = DefaultErrorResult.failure(e.getResultCode() == null ?
-//                ResultCode.SUCCESS : e.getResultCode(), e, HttpStatus.OK, e.getData());
-//        if (!StringUtils.isEmpty(e.getMessage())) {
-//            defaultErrorResult.setMessage(e.getMessage());
-//        }
-//        return defaultErrorResult;
-//    }
+    public static DefaultErrorResult failure(BusinessException e) {
+        ExceptionEnum ee = ExceptionEnum.getByEClass(e.getClass());
+        if (ee != null) {
+            return DefaultErrorResult.failure(ee.getResultCode(), e, ee.getHttpStatus(), e.getData());
+        }
+
+        DefaultErrorResult defaultErrorResult = DefaultErrorResult.failure(e.getResultCode() == null ?
+                ResultCode.SUCCESS : e.getResultCode(), e, HttpStatus.OK, e.getData());
+        if (!StringUtils.isEmpty(e.getMessage())) {
+            defaultErrorResult.setMessage(e.getMessage());
+        }
+        return defaultErrorResult;
+    }
 
 }
