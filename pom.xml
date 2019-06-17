@@ -78,11 +78,11 @@
         <!-- test end -->
 
         <!-- platform api begin -->
-        <dependency>
-            <groupId>com.baidu.aip</groupId>
-            <artifactId>java-sdk</artifactId>
-            <version>4.6.1</version>
-        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>com.baidu.aip</groupId>-->
+            <!--<artifactId>java-sdk</artifactId>-->
+            <!--<version>4.4.1</version>-->
+        <!--</dependency>-->
         <!-- platform api end-->
 
         <!-- utils begin -->
