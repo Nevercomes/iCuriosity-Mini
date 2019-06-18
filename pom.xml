@@ -54,19 +54,19 @@
 
         <!-- security begin -->
         <!--<dependency>-->
-            <!--<groupId>org.springframework.boot</groupId>-->
-            <!--<artifactId>spring-boot-starter-security</artifactId>-->
+        <!--<groupId>org.springframework.boot</groupId>-->
+        <!--<artifactId>spring-boot-starter-security</artifactId>-->
         <!--</dependency>-->
         <!--<dependency>-->
-            <!--<groupId>org.springframework.security</groupId>-->
-            <!--<artifactId>spring-security-test</artifactId>-->
-            <!--<scope>test</scope>-->
+        <!--<groupId>org.springframework.security</groupId>-->
+        <!--<artifactId>spring-security-test</artifactId>-->
+        <!--<scope>test</scope>-->
         <!--</dependency>-->
         <!-- security end -->
 
         <!--<dependency>-->
-            <!--<groupId>org.springframework.boot</groupId>-->
-            <!--<artifactId>spring-boot-starter-mail</artifactId>-->
+        <!--<groupId>org.springframework.boot</groupId>-->
+        <!--<artifactId>spring-boot-starter-mail</artifactId>-->
         <!--</dependency>-->
 
         <!-- test begin -->
@@ -74,6 +74,12 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
+            <exclusions>
+                <exclusion>
+                    <groupId>com.vaadin.external.google</groupId>
+                    <artifactId>android-json</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
         <!-- test end -->
 
@@ -110,7 +116,7 @@
         <dependency>
             <groupId>tk.mybatis</groupId>
             <artifactId>mapper-spring-boot-starter</artifactId>
-            <version>1.2.3</version>
+            <version>2.0.4</version>
         </dependency>
         <dependency>
             <groupId>commons-io</groupId>
@@ -161,17 +167,17 @@
 
         <!-- 解决第三方jar的打包问题 -->
         <!--<resources>-->
-            <!--<resource>-->
-                <!--<directory>${project.basedir}/lib</directory>-->
-                <!--<targetPath>BOOT-INF/lib/</targetPath>-->
-                <!--<includes>-->
-                    <!--<include>**/*.jar</include>-->
-                <!--</includes>-->
-            <!--</resource>-->
-            <!--<resource>-->
-                <!--<directory>src/main/resources</directory>-->
-                <!--<targetPath>BOOT-INF/classes/</targetPath>-->
-            <!--</resource>-->
+        <!--<resource>-->
+        <!--<directory>${project.basedir}/lib</directory>-->
+        <!--<targetPath>BOOT-INF/lib/</targetPath>-->
+        <!--<includes>-->
+        <!--<include>**/*.jar</include>-->
+        <!--</includes>-->
+        <!--</resource>-->
+        <!--<resource>-->
+        <!--<directory>src/main/resources</directory>-->
+        <!--<targetPath>BOOT-INF/classes/</targetPath>-->
+        <!--</resource>-->
         <!--</resources>-->
 
 
