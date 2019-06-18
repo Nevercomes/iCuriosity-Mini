@@ -11,6 +11,6 @@ import tk.mybatis.mapper.common.Mapper;
 @Repository
 public interface UserMapper extends Mapper<User> {
 
-
+    User customSelect(User user);
 
 }

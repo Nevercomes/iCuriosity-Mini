@@ -18,7 +18,8 @@ public class UserMapperTest extends BaseTest {
 
     @Test
     public void testInsert() {
-        userMapper.insert(new User("123", "test"));
+        userMapper.insert(new User("1234", "test"));
+        System.out.println(userMapper.customSelect(new User()));
     }
 
 }
