@@ -1,5 +1,6 @@
 package com.nevercome.icuriosity.domain;
 
+import com.nevercome.icuriosity.common.persistence.po.BasePO;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -19,7 +20,7 @@ import java.io.Serializable;
 @AllArgsConstructor
 @Data
 @Table(name = "user")
-public class User implements Serializable {
+public class User extends BasePO<String> {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY, generator = "select uuid()")
