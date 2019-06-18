@@ -27,6 +27,9 @@ public class PageQO<T> {
 
     private int pageSize = 10;
 
+    /**
+     * 如果设置了orderBy的话 会覆盖掉原有查询中的orderBy
+     */
     private String orderBy;
 
     private T condition;

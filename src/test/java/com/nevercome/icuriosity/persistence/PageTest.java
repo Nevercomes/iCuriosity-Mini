@@ -21,8 +21,8 @@ public class PageTest  extends BaseTest {
     @Test
     public void pageTest() {
         PageQO pageQO = new PageQO(2, 2);
-        Page<User> page = PageHelper.startPage(pageQO.getPageNum(), pageQO.getPageSize(), pageQO.getOrderBy());
-        userMapper.selectAll();
+        Page<User> page = PageHelper.startPage(pageQO.getPageNum(), pageQO.getPageSize(),"name desc");
+        userMapper.customSelect(new User());
         PageVO<User> pageVO = PageVO.build(page);
 
         System.out.println(pageVO.getList().get(0).getId());
