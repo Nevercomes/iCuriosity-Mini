@@ -37,6 +37,24 @@ public class Aip {
         return aipResult;
     }
 
+    public static AipResult infer(byte[] image) {
+        // 初始化一个AipImageClassifyClient
+        AipImageClassify client = new AipImageClassify(APP_ID, API_KEY, SECRET_KEY);
+
+        // 可选：设置网络连接参数
+        client.setConnectionTimeoutInMillis(2000);
+        client.setSocketTimeoutInMillis(60000);
+
+        HashMap<String, String> options = new HashMap<>();
+        options.put("baike_num", "5");
+
+        JSONObject resBaiKee = client.advancedGeneral(image, options);
+        AipResult aipResult = (AipResult) JsonMapper.fromJsonString(resBaiKee.toString(2), AipResult.class);
+        log.info("AipImageClassify infer from image. Result log_id: {}, highest score keyword: {}",
+                aipResult.getLog_id(), aipResult.getResult().get(0).getKeyword());
+        return aipResult;
+    }
+
     public static void main(String[] args) {
 
         // 初始化一个AipImageClassifyClient
